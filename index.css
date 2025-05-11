@@ -1,0 +1,273 @@
+      * {
+          margin: 0px;
+          padding: 0px;
+      }
+
+      li {
+          list-style: none;
+      }
+
+      a {
+          color: inherit;
+          text-decoration: inherit;
+      }
+
+      body {
+          font-family: 'GumiRomanceTTF';
+      }
+
+      @font-face {
+          font-family: 'GumiRomanceTTF';
+          src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/GumiRomanceTTF.woff2') format('woff2');
+          font-weight: normal;
+          font-style: normal;
+      }
+
+      /*header*/
+      header {
+          height: 100px;
+          padding: 2rem 4rem;
+          box-sizing: border-box;
+          background: linear-gradient(45deg, #f7cac9, #92a8d1);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #92a8d1;
+
+      }
+
+      .gnb ul {
+          display: flex;
+          gap: 30px;
+          font-size: 1.5rem;
+      }
+
+      .gnb .char {
+          position: relative;
+          display: inline-block;
+          color: transparent;
+          overflow: hidden;
+      }
+
+      .gnb .char:before,
+      .gnb .char:after {
+          position: absolute;
+          left: 0;
+          top: 0;
+          content: attr(data-char);
+          color: #333;
+          /* opacity: 0.6; */
+          transition: 0.3s;
+          transition-delay: calc(60ms * var(--char-index));
+      }
+
+      .gnb .char:before {
+          transform: translateY(100%);
+          color: #f7cac9
+      }
+
+      .gnb li a:hover .char:before {
+          transform: translateY(0%);
+          /* opacity: 1; */
+      }
+
+      .gnb li a:hover .char:after {
+          transform: translateY(-100%);
+      }
+
+      section {
+          width: 100%;
+          height: 100vh;
+      }
+
+      /*con01*/
+      .con01 {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          background-image: url(img/세븐틴.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+      }
+
+      .con01 video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+      }
+
+      .con01 .say {
+          width: 100%;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          -webkit-text-stroke: 2px #f7cac9;
+          color: transparent;
+          text-align: center;
+      }
+
+      .con01 .say h2 {
+          font-size: 100px;
+          letter-spacing: 10px;
+      }
+
+      /*con02*/
+      .con02 {
+          width: 100%;
+          height: 100%;
+      }
+
+      .con02 .title {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          font-size: 170px;
+          line-height: 0.9;
+          padding-top: 30vh;
+          box-sizing: border-box;
+          color: #92a8d1;
+      }
+
+      .con02 .seventeen {
+          font-family: "Playwrite DK Loopet", cursive;
+
+      }
+
+      .con02 .member {
+          font-family: "Playwrite DK Loopet", cursive;
+          font-style: italic;
+          font-size: 220px;
+      }
+
+      /*list*/
+
+      .con02 .list {
+          width: 70%;
+          margin: 0px auto;
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+
+      .con02 .list li {
+          width: 45%;
+          margin-top: 200px;
+      }
+
+      .con02 .list li:nth-child(2n) {
+          margin-top: 0px;
+      }
+
+      .con02 .list img {
+          width: 100%;
+          height: 800px;
+      }
+
+      .con02 .textBox h3 {
+          font-size: 35px;
+          font-weight: normal;
+          margin: 20px 0px 5px;
+      }
+
+      .con02 .textBox .info {
+          display: flex;
+          justify-content: space-between;
+          color: #222;
+          font-size: 1.1rem;
+      }
+
+      .con02 .imgBox {
+          position: relative;
+      }
+
+      .con02 .imgBox::before {
+          width: 160px;
+          height: 160px;
+          content: "";
+          border: 1px solid #fff;
+          border-radius: 50%;
+          background: url(img/화살표.png)no-repeat center;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          z-index: 1;
+          transition: 0.5s;
+          opacity: 0;
+      }
+
+      .con02 .imgBox::after {
+          content: "";
+          width: 0px;
+          height: 0px;
+          border-radius: 50%;
+          background: url(img/원.png)no-repeat center;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+
+          animation: spin 10s infinite linear;
+      }
+
+      @keyframes spin {
+          0% {
+              transform: translate(-50%, -50%) rotate(0deg);
+          }
+
+          100% {
+              transform: translate(-50%, -50%) rotate(360deg);
+          }
+      }
+
+      /*hover*/
+      .con02 a:hover .imgBox::before {
+          opacity: 1;
+      }
+
+      .con02 a:hover .imgBox::after {
+          width: 160px;
+          height: 160px;
+      }
+
+      .con02 a:hover .imgBox img {
+          filter: brightness(50%);
+      }
+
+      /*con03*/
+
+      .con03 {
+          width: 100%;
+          height: 1500px;
+          position: relative;
+          overflow: hidden;
+
+      }
+
+      .con03 .circle {
+          position: absolute;
+          border: 3px solid #92a8d1;
+          border-radius: 50%;
+          top: 40%;
+          left: 50%;
+          transform: translateX(-50%);
+      }
+
+      .con03 .txt {
+          position: absolute;
+          color: #222;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%);
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: wrap;
+      }
+
+      .con03 .txt li {
+          font-size: 60px;
+          font-weight: bold;
+      }
